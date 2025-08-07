@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple Hello World application with modern design">
+    <title>Hello World - Basic</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background elements for visual effect -->
+    <div class="bg-elements">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+    </div>
+
+    <!-- Main container -->
+    <main class="container">
+        <!-- Header section -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🌍</span>
+                <span class="logo-text">HelloWorld</span>
+            </div>
+        </header>
+
+        <!-- Hero section -->
+        <section class="hero" role="main">
+            <div class="hero-content">
+                <h1 class="main-title" id="main-title">
+                    <span class="title-line">Hello,</span>
+                    <span class="title-line highlight">World!</span>
+                </h1>
+                
+                <p class="subtitle" id="subtitle">
+                    Welcome to a simple yet elegant Hello World application
+                </p>
+
+                <div class="cta-section">
+                    <button class="cta-button primary" id="greetBtn" aria-label="Get personalized greeting">
+                        Say Hello
+                    </button>
+                    <button class="cta-button secondary" id="infoBtn" aria-label="Learn more about this project">
+                        Learn More
+                    </button>
+                </div>
+
+                <!-- Dynamic content area -->
+                <div class="dynamic-content" id="dynamicContent" role="region" aria-live="polite">
+                    <!-- Content will be populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Info section (initially hidden) -->
+        <section class="info-section" id="infoSection" aria-hidden="true">
+            <div class="info-card">
+                <h2>About This Project</h2>
+                <p>This is a modern take on the classic "Hello World" application, featuring:</p>
+                <ul>
+                    <li>Responsive design that works on all devices</li>
+                    <li>Smooth animations and transitions</li>
+                    <li>Accessible markup and interactions</li>
+                    <li>Modern CSS with glass morphism effects</li>
+                    <li>Interactive JavaScript functionality</li>
+                </ul>
+                <button class="close-info" id="closeInfo" aria-label="Close information panel">
+                    ✕
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Hello World Basic. Made with ❤️ and modern web technologies.</p>
+    </footer>
+
+    <!-- Loading indicator -->
+    <div class="loading-indicator" id="loadingIndicator" aria-hidden="true">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    
+    <!-- Inline script for critical functionality -->
+    <script>
+        // Ensure page loads smoothly
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('loaded');
+            
+            // Add keyboard navigation support
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const infoSection = document.getElementById('infoSection');
+                    if (infoSection && !infoSection.hasAttribute('aria-hidden')) {
+                        document.getElementById('closeInfo').click();
+                    }
+                }
+            });
+        });
+
+        // Basic error handling
+        window.addEventListener('error', function(e) {
+            console.error('Application error:', e.error);
+        });
+    </script>
+</body>
+</html>
